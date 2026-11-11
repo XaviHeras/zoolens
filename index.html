@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Zoolens: see the world through animal eyes</title>
+<meta name="description" content="Zoolens turns your iPhone camera into a window onto 17 animals: dog, cat, bee, shark, mantis shrimp and more. 4 animals free. No ads, no sign-up. Coming soon to the App Store.">
+<link rel="alternate" hreflang="en" href="./">
+<link rel="alternate" hreflang="es" href="es/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23151244'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23e7c547'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#f7f4e6;--card:#fff;--text:#151244;--sec:#4a4a6a;--accent:#064c55;--gold:#e7c547;--line:rgba(21,18,68,.15);--btn:#151244;--btntext:#f7f4e6;--chip:#fff3b8}
+@media(prefers-color-scheme:dark){:root{--bg:#151244;--card:#1f1c5c;--text:#f7f4e6;--sec:#c4c2e4;--accent:#e7c547;--line:rgba(247,244,230,.2);--btn:#e7c547;--btntext:#151244;--chip:#3b3410}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--text);font:1.0625rem/1.6 ui-rounded,"Nunito",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.125rem}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--card);color:var(--accent);padding:.75rem 1rem;border-radius:.75rem;z-index:2}
+.skip:focus{top:1rem}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:.25rem}
+.top{display:flex;justify-content:space-between;align-items:center;padding-top:1.25rem}
+.brand{font-weight:800;font-size:1.25rem;letter-spacing:.01em;margin:0}
+.lang{display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1rem;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-weight:700}
+.lang:hover{background:var(--card)}
+.hero{display:grid;gap:2rem;padding:2rem 0 1rem}
+h1{font-size:clamp(2.1rem,8vw,3.6rem);line-height:1.08;margin:0 0 1rem;font-weight:900}
+h2{font-size:1.6rem;line-height:1.2;margin:0 0 .5rem}
+h3{font-size:1.1rem;margin:0 0 .25rem}
+.lead{font-size:1.2rem;color:var(--sec);margin:0 0 1.25rem}
+.soon{display:inline-block;background:var(--btn);color:var(--btntext);font-weight:800;padding:.85rem 1.4rem;border-radius:999px;margin:0}
+.soonsub{color:var(--sec);font-size:.95rem;margin:.6rem 0 0}
+figure{margin:0}
+.phone{display:block;width:100%;height:auto;border-radius:1.5rem;border:1px solid var(--line)}
+figcaption{color:var(--sec);font-size:.95rem;text-align:center;margin-top:.5rem}
+.hero .phone{max-width:19rem;margin:0 auto}
+section{padding:2.25rem 0;border-top:1px solid var(--line)}
+.cards{display:grid;gap:1rem;list-style:none;padding:0;margin:1rem 0 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.1rem 1.25rem}
+.card p{margin:0;color:var(--sec)}
+.shots{display:grid;gap:1.25rem;grid-template-columns:1fr 1fr;margin-top:1rem}
+.shots figure:first-child{grid-column:1/-1;max-width:16rem;margin:0 auto}
+.animals{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:1rem 0}
+.animals li{padding:.4rem .9rem;border-radius:999px;border:1px solid var(--line);background:var(--card);font-weight:700}
+.animals li.free{background:var(--chip);border-color:var(--gold)}
+.animals .tag{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin-left:.4rem;color:var(--accent)}
+.note{color:var(--sec);font-size:.95rem}
+.plans{display:grid;gap:1rem;list-style:none;padding:0;margin:1rem 0}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.1rem 1.25rem}
+.plan .p{font-size:1.9rem;font-weight:900;margin:.1rem 0}
+.plan .u{color:var(--sec);font-size:.95rem}
+.plan:first-child{border-color:var(--accent);border-width:2px}
+.trust{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;list-style:none;padding:0;margin:0;font-weight:700}
+footer{padding:2rem 0 3rem;border-top:1px solid var(--line);color:var(--sec);font-size:.95rem}
+@media(min-width:48rem){
+ .hero{grid-template-columns:1.2fr .8fr;align-items:center;padding:3.5rem 0 2rem}
+ .cards,.plans{grid-template-columns:repeat(3,1fr)}
+ .shots{grid-template-columns:repeat(3,1fr)}
+ .shots figure:first-child{grid-column:auto;max-width:none;margin:0}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="top">
+ <p class="brand">Zoolens</p>
+ <nav aria-label="Language"><a class="lang" href="es/" hreflang="es" lang="es">Español</a></nav>
+</header>
+<main id="main">
+ <div class="hero">
+  <div>
+   <h1>See the world through animal eyes</h1>
+   <p class="lead">Point your iPhone camera and the live view becomes what a dog, a bee or a mantis shrimp might see. Take photos and videos with the effect.</p>
+   <p class="soon">Coming soon to the App Store</p>
+   <p class="soonsub">We will add the link here when the app is out.</p>
+  </div>
+  <figure><img class="phone" src="img/app-bee.jpg" width="900" height="1948" alt="Zoolens camera showing a live view with a bee effect"></figure>
+ </div>
+ <section aria-labelledby="how">
+  <h2 id="how">What it does</h2>
+  <ul class="cards">
+   <li class="card"><h3>Live, in a tap</h3><p>Pick an animal and the camera view changes right away. Swipe to switch eyes in a second.</p></li>
+   <li class="card"><h3>Photos and videos</h3><p>Capture with the effect applied. Saved to your Photos, ready to share.</p></li>
+   <li class="card"><h3>Learn as you look</h3><p>Tap an animal for a short note on how it sees.</p></li>
+  </ul>
+  <div class="shots">
+   <figure><img class="phone" src="img/app-bee.jpg" width="900" height="1948" loading="lazy" alt="Zoolens camera showing a live view with a bee effect"><figcaption>A bee's honeycomb view</figcaption></figure>
+   <figure><img class="phone" src="img/app-grid.jpg" width="900" height="1948" loading="lazy" alt="The Zoolens animal picker, showing 17 animals"><figcaption>Pick from 17 animals</figcaption></figure>
+   <figure><img class="phone" src="img/app-video.jpg" width="900" height="1948" loading="lazy" alt="Recording a video in Zoolens with an animal effect"><figcaption>Record video with sound</figcaption></figure>
+  </div>
+ </section>
+ <section aria-labelledby="an">
+  <h2 id="an">17 animals</h2>
+  <p>4 free, 13 premium. The free ones are marked.</p>
+  <ul class="animals">
+   <li class="free">Human<span class="tag">Free</span></li>
+   <li class="free">Dog<span class="tag">Free</span></li>
+   <li class="free">Cat<span class="tag">Free</span></li>
+   <li class="free">Bee<span class="tag">Free</span></li>
+   <li class="">Rabbit</li>
+   <li class="">Rat</li>
+   <li class="">Chipmunk</li>
+   <li class="">Lion</li>
+   <li class="">Elephant</li>
+   <li class="">Dolphin</li>
+   <li class="">Shark</li>
+   <li class="">Frog</li>
+   <li class="">Bird</li>
+   <li class="">Snake</li>
+   <li class="">Fly</li>
+   <li class="">Mosquito</li>
+   <li class="">Mantis shrimp</li>
+  </ul>
+  <p class="note">Effects are simulations inspired by vision science, not measurements. What an animal really sees is more than a filter can show.</p>
+ </section>
+ <section aria-labelledby="pr">
+  <h2 id="pr">Prices</h2>
+  <p>Start with the 4 free animals. Unlock all 17 with one of these.</p>
+  <ul class="plans">
+   <li class="plan"><h3>Annual</h3><p class="p">€29.99</p><p class="u">per year<br>7-day free trial</p></li>
+   <li class="plan"><h3>Lifetime</h3><p class="p">€24.99</p><p class="u">one time<br>No subscription, no renewal</p></li>
+   <li class="plan"><h3>Weekly</h3><p class="p">€4.99</p><p class="u">per week<br>3-day free trial</p></li>
+  </ul>
+  <p class="note">Prices in euros; in other countries Apple sets the price. Subscriptions renew automatically until you cancel in Settings. Free photos and videos carry a small Zoolens mark; Premium removes it.</p>
+ </section>
+ <section>
+  <ul class="trust">
+   <li>No ads</li>
+   <li>No sign-up</li>
+   <li>Photos stay on your phone (unless you share them)</li>
+  </ul>
+ </section>
+</main>
+<footer>
+ <p>Zoolens for iPhone. <a href="privacy/">Privacy policy</a></p>
+</footer>
+</div>
+</body>
+</html>
