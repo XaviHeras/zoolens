@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xaviheras.github.io/zoolens/sitemap.xml
