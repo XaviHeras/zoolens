@@ -277,6 +277,12 @@ details li{padding:.5rem 0;border-top:1px solid var(--line)}
 .topic .q .still{display:none}
 }
 .after{max-width:44rem}
+.zoo h3{margin:1.5rem 0 .5rem}
+.zoo ul{list-style:none;margin:0;padding:0 1.125rem;border-radius:1rem;background:var(--card);border:1px solid var(--line)}
+.zoo li{padding:.625rem 0;border-top:1px solid var(--line)}
+.zoo li:first-child{border-top:0}
+.zoo .say{display:block;color:var(--sec)}
+.zoo .more{margin-top:1.5rem}
 footer{border-top:1px solid var(--line);padding:2.5rem 0 calc(2.5rem + env(safe-area-inset-bottom));color:var(--sec);font-size:1rem;margin-top:3rem}
 footer .cols3{display:grid;gap:1rem}
 @media (min-width:60rem){footer .cols3{grid-template-columns:repeat(3,1fr)}footer .cols3.two{grid-template-columns:repeat(2,1fr)}}
@@ -386,7 +392,7 @@ html{scroll-behavior:auto}
   </div>
  </div>
  <div class="after">
-  <section class="q"><h2>¿Se fijan los perros en el movimiento?</h2><p>Sí. A los perros se les da bien ver lo que se mueve. En la app, lo que se mueve se ve nítido y lo quieto, algo apagado; con tu cámara, esta página hace lo mismo. En una foto fija nada se mueve, así que toda la imagen muestra la vista en reposo.</p></section><section class="q"><h2>¿Cómo ven los perros de noche?</h2><p>Mejor que nosotros, aunque nadie sabe exactamente cuánto. Su retina tiene muchos bastones, las células que funcionan con poca luz, y detrás tienen una capa que refleja la luz, el tapetum lucidum: le da a la retina una segunda oportunidad de captarla, y es lo que hace brillar sus ojos en las fotos con flash. La vista de Perro de esta página no simula la oscuridad; en la app, la de Gato sí abre las sombras en una vista nocturna.</p></section><section class="q"><h2>Cómo funciona</h2><p>La demo usa las mismas matemáticas de color que Zoolens. Los colores del perro salen de un ajuste de un modelo general de la visión del color (Machado y otros, 2009): el ajuste sin verde (deuteranopía), aplicado en luz lineal. El desenfoque sale de la cifra 20/75 y está exagerado 3,5 veces para que se note en pantalla. Todo ocurre en esta pestaña: cuando la demo ya ha empezado, puedes activar el modo avión y sigue funcionando.</p></section>
+  <section class="q"><h2>¿Se fijan los perros en el movimiento?</h2><p>Sí. A los perros se les da bien ver lo que se mueve. En la app, lo que se mueve se ve nítido y lo quieto, algo apagado; con tu cámara, esta página hace lo mismo. En una foto fija nada se mueve, así que toda la imagen muestra la vista en reposo.</p></section><section class="q"><h2>¿Cómo ven los perros de noche?</h2><p>Mejor que nosotros, aunque nadie sabe exactamente cuánto. Su retina tiene muchos bastones, las células que funcionan con poca luz, y detrás tienen una capa que refleja la luz, el tapetum lucidum: le da a la retina una segunda oportunidad de captarla, y es lo que hace brillar sus ojos en las fotos con flash. La vista de Perro de esta página no simula la oscuridad; en la app, la de <a href="../../es/como-ven-los-gatos/">Gato</a> sí abre las sombras en una vista nocturna.</p></section><section class="q"><h2>Cómo funciona</h2><p>La demo usa las mismas matemáticas de color que Zoolens. Los colores del perro salen de un ajuste de un modelo general de la visión del color (Machado y otros, 2009): el ajuste sin verde (deuteranopía), aplicado en luz lineal. El desenfoque sale de la cifra 20/75 y está exagerado 3,5 veces para que se note en pantalla. Todo ocurre en esta pestaña: cuando la demo ya ha empezado, puedes activar el modo avión y sigue funcionando.</p></section>
   <section class="q"><h2>Fuentes</h2><ol class="sources"><li>Neitz J, Geist T, Jacobs GH (1989). Color vision in the dog. <i>Visual Neuroscience</i> 3(2):119-125. <a href="https://doi.org/10.1017/S0952523800004430">doi.org/10.1017/S0952523800004430</a></li><li>Miller PE, Murphy CJ (1995). Vision in dogs. <i>JAVMA</i> 207(12):1623-1634. <a href="https://pubmed.ncbi.nlm.nih.gov/7493905/">pubmed.ncbi.nlm.nih.gov/7493905/</a></li><li>University of Wisconsin–Madison News, “Curiosities: How well do dogs see at night?” (18 de julio de 2007). <a href="https://news.wisc.edu/?p=10957">news.wisc.edu/?p=10957</a></li><li>American Kennel Club, “Can Dogs See in the Dark?”. <a href="https://www.akc.org/expert-advice/lifestyle/can-dogs-see-in-the-dark/">www.akc.org/expert-advice/lifestyle/can-dogs-see-in-the-dark/</a></li><li>Machado GM, Oliveira MM, Fernandes LAF (2009). A physiologically-based model for simulation of color vision deficiency. <i>IEEE TVCG</i> 15(6):1291-1298. <a href="https://doi.org/10.1109/TVCG.2009.113">doi.org/10.1109/TVCG.2009.113</a></li></ol>
   <p class="byline">Actualizado el 27 de noviembre de 2026 · Hecho por Xavi Heras, el desarrollador de Zoolens.</p></section>
  </div>
@@ -403,7 +409,7 @@ html{scroll-behavior:auto}
 </main>
 <footer><div class="wrap">
  <div class="cols3 two">
-  <div><h2>Aprende</h2><ul><li><a href="../../es/como-ven-los-perros/">Cómo ven los perros</a></li><li><a href="../../es/como-ven-las-abejas/">Cómo ven las abejas</a></li><li><a href="../../es/simulador-daltonismo/">Simulador de daltonismo</a></li><li><a href="../../es/como-ve-un-bebe/">Cómo ve un bebé</a></li></ul></div>
+  <div><h2>Aprende</h2><ul><li><a href="../../es/como-ven-los-perros/">Cómo ven los perros</a></li><li><a href="../../es/como-ven-los-gatos/">Cómo ven los gatos</a></li><li><a href="../../es/como-ven-las-abejas/">Cómo ven las abejas</a></li><li><a href="../../es/simulador-daltonismo/">Simulador de daltonismo</a></li><li><a href="../../es/como-ve-un-bebe/">Cómo ve un bebé</a></li><li><a href="../../es/como-ven-los-animales/">Cómo ven los animales</a></li></ul></div>
   <div><h2>Zoolens</h2><ul><li><a href="../../es/soporte/">Soporte</a></li><li><a href="../../privacy/#es">Privacidad</a></li><li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">Condiciones (licencia estándar de Apple)</a></li></ul></div>
  </div>
  <p>Sin cookies. Sin analítica. La demo nunca sube tu imagen. Los efectos son simulaciones basadas en estudios de visión, no mediciones.</p>
