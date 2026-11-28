@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How do fish see? Colour and light underwater · Zoolens</title>
+<meta name="description" content="How fish see: most see colour, some see ultraviolet, and water steals red light first. Compare a goldfish and a shark with a simulation on a photo.">
+<link rel="canonical" href="https://xaviheras.github.io/zoolens/how-fish-see/">
+<link rel="alternate" hreflang="en" href="https://xaviheras.github.io/zoolens/how-fish-see/">
+<link rel="alternate" hreflang="es" href="https://xaviheras.github.io/zoolens/es/como-ven-los-peces/">
+<link rel="alternate" hreflang="x-default" href="https://xaviheras.github.io/zoolens/how-fish-see/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F7F4E6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151244" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Zoolens">
+<meta property="og:title" content="How do fish see the world?">
+<meta property="og:description" content="How fish see: most see colour, some see ultraviolet, and water steals red light first. Compare a goldfish and a shark with a simulation on a photo.">
+<meta property="og:url" content="https://xaviheras.github.io/zoolens/how-fish-see/">
+<meta property="og:image" content="https://xaviheras.github.io/zoolens/og/fish-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<script>document.documentElement.className+=' js'+(location.hash?' hash':'')</script>
+<style>:root{--bg:#F7F4E6;--card:#FFFFFF;--soft:#EFEAD3;--text:#151244;--sec:#4A4A6A;--link:#064C55;--gold:#E7C547;--indigo:#151244;
+--line:rgba(21,18,68,.18);--glass:rgba(21,18,68,.75);--btn:#151244;--btntext:#F7F4E6;--focus:#064C55;--err:#8F1D14;--errbg:#FFFFFF;--head:rgba(247,244,230,.92);
+--display:ui-rounded,"SF Pro Rounded","Nunito",system-ui,sans-serif;
+--body:ui-rounded,"Nunito",-apple-system,"Segoe UI",Roboto,sans-serif;
+--m:1.125rem;--hh:3.5rem;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--bg:#151244;--card:#1F1C5C;--soft:#1B1850;--text:#F7F4E6;--sec:#C4C2E4;--link:#E7C547;--line:rgba(247,244,230,.24);
+--btn:#E7C547;--btntext:#151244;--focus:#E7C547;--err:#FFB4A9;--errbg:#1F1C5C;--head:rgba(21,18,68,.92)}}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:calc(var(--hh) + env(safe-area-inset-top) + .5rem)}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.0625rem/1.6 var(--body);overflow-wrap:break-word}
+img,canvas,video,svg{display:block;max-width:100%}
+a{color:var(--link);text-underline-offset:.18em}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:.4rem}
+.wrap{max-width:74rem;margin:0 auto;padding:0 max(var(--m),env(safe-area-inset-left)) 0 max(var(--m),env(safe-area-inset-right))}
+.skip{position:absolute;left:1rem;top:-6rem;z-index:30;background:var(--card);color:var(--link);padding:.75rem 1rem;border-radius:.75rem;font-weight:700}
+.skip:focus{top:calc(.75rem + env(safe-area-inset-top))}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.hdr{position:sticky;top:0;z-index:20;background:var(--head);-webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.hdr .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem .5rem;min-height:var(--hh);padding-top:.375rem;padding-bottom:.375rem}
+.hdr nav{display:flex;flex-wrap:wrap;gap:.5rem}
+.hdr.tall{position:relative}
+h1,h2,h3{hyphens:auto;-webkit-hyphens:auto}
+.chip{max-width:100%;flex-wrap:wrap}
+.hdr.tight .word{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.brand{display:inline-flex;align-items:center;gap:.5rem;min-height:2.75rem;font:800 1.25rem/1 var(--display);color:var(--text);text-decoration:none;margin-right:auto}
+.brand svg{width:1.75rem;height:1.75rem;flex:none}
+.brand .logo-d{display:none}
+@media (prefers-color-scheme:dark){.brand .logo-l{display:none}.brand .logo-d{display:block}}
+.pill{display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;min-width:2.75rem;padding:0 1rem;border-radius:999px;font:700 1rem/1.1 var(--display);text-decoration:none;color:var(--text);border:1px solid var(--line);white-space:nowrap}
+.pill.solid{background:var(--btn);color:var(--btntext);border-color:var(--btn);transition:opacity .15s}
+.pill.solid.away{opacity:0;pointer-events:none}
+h1{font:800 2rem/1.12 var(--display);margin:1.25rem 0 1rem;letter-spacing:-.01em;text-wrap:balance}
+h2{font:800 1.5rem/1.2 var(--display);margin:0 0 .75rem;text-wrap:balance}
+h3{font:800 1.25rem/1.3 var(--display);margin:0 0 .25rem}
+p{margin:0 0 1rem}
+.eyebrow{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem;font:700 1rem/1.4 var(--display);margin:0 0 .5rem;color:var(--text)}
+.eyebrow svg{width:1.5rem;height:1.5rem;flex:none}
+.lead{font-size:1.1875rem;line-height:1.55;color:var(--sec);max-width:36rem}
+.answer{font-size:1.1875rem;line-height:1.55;max-width:40rem}
+.fine{font-size:1rem;color:var(--sec)}
+@media (min-width:60rem){h1{font-size:3rem;margin-top:2rem}h2{font-size:2rem}.lead,.answer{font-size:1.25rem}:root{--m:2.5rem}}
+.free,.prem{display:inline-flex;align-items:center;border-radius:999px;padding:0 .5rem;font:800 1rem/1.5 var(--display);white-space:nowrap}
+.free{background:#E7C547;color:#151244}
+.prem{background:#151244;color:#E7C547;border:1px solid #E7C547}
+.split{position:relative;aspect-ratio:1/1;overflow:hidden;background:#2A2760;touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;cursor:ew-resize;container-type:inline-size;margin:0 calc(-1 * var(--m));--x:40;--oy:50%}
+.split[data-scene=dog]{--oy:53%}
+@media (min-width:36rem){.split{margin:0;border-radius:1.75rem}}
+.lyr{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.lyr.plain{clip-path:inset(0 calc(100% - var(--x) * 1%) 0 0)}
+.lyr>*,.lyr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% var(--oy);-webkit-user-drag:none}
+.lyr .mirror{transform:scaleX(-1)}
+.lyr.in{opacity:0}
+.lyr.fade{transition:opacity var(--fade,280ms) ease-out}
+.ctl{position:absolute;z-index:4}
+.lab{top:.75rem;display:inline-flex;flex-wrap:wrap;align-items:center;gap:.15rem .35rem;padding:.3rem .75rem;border-radius:1.1rem;background:var(--glass);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fff;font:700 1rem/1.4 var(--display);transition:opacity .15s;pointer-events:none;white-space:nowrap;max-width:calc(100% - 1.5rem)}
+.lab .free,.lab .prem{font-size:1rem;line-height:1.35}
+.lab-l{left:.75rem;max-width:max(3rem,calc(var(--x) * 1cqw - 1.25rem));overflow:hidden;text-overflow:ellipsis}
+.lab-r{right:.75rem;max-width:max(3rem,calc((100 - var(--x)) * 1cqw - 1.25rem));overflow:hidden;justify-content:flex-end}
+.lab.off{opacity:0}
+.line{top:0;bottom:0;left:0;width:2px;margin-left:-1px;background:rgba(255,255,255,.92);box-shadow:-1px 0 0 rgba(21,18,68,.3),1px 0 0 rgba(21,18,68,.3);pointer-events:none;transform:translateX(calc(var(--x) * 1cqw))}
+.handle{top:76%;left:0;width:3rem;height:3rem;margin:-1.5rem 0 0 -1.5rem;border-radius:50%;background:var(--glass);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:2px solid #fff;display:grid;place-items:center;color:#fff;cursor:ew-resize;touch-action:none;transform:translateX(calc(var(--x) * 1cqw))}
+.handle svg{width:2rem;height:2rem}
+.handle:focus-visible{outline:3px solid #E7C547;outline-offset:3px;border-radius:50%}
+.split.static{cursor:auto}
+.split.sbs{cursor:auto}
+.split.sbs .lyr.plain{clip-path:none;right:50%}
+.split.sbs .lyr.animal{left:50%}
+.split.sbs .lyr>*,.split.sbs .lyr img{object-fit:contain;object-position:50% 50%}
+.split.sbs .line{transform:translateX(50cqw)}
+.split.sbs .handle{visibility:hidden}
+.split.sbs .lab.off{opacity:1}
+.split.sbs .lab-l,.split.sbs .lab-r{max-width:calc(50cqw - 1.25rem)}
+@media (min-width:60rem){.topic .stage-col .split.sbs,.topic.pinned .stage-col .split.sbs{height:auto;aspect-ratio:2/1.15}}
+[data-scenes] .stage-col .split{view-transition-name:cbstage}
+::view-transition-group(cbstage){animation-duration:.28s;animation-timing-function:ease-out}
+.ring{left:43%;top:var(--by,53%);width:30cqw;height:30cqw;margin:-15cqw 0 0 -15cqw;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1px rgba(21,18,68,.6),inset 0 0 0 1px rgba(21,18,68,.6);opacity:0;transform:scale(.9);transition:opacity .15s,transform .15s;pointer-events:none}
+.split.ring-on .ring{opacity:1;transform:none;transition:opacity .25s ease-out,transform .25s ease-out}
+.lyr img,.lyr canvas,.lyr video{transform-origin:41% calc(var(--oy) - 27cqw);transition:transform .35s ease-in-out}
+.split.zoom-on .lyr img{transform:scale(2.2);transition-duration:.45s}
+@media (min-width:60rem){.split{aspect-ratio:4/5;--by:47%}.lyr img{transform-origin:41% 28%}}
+.chooser{position:absolute;z-index:6;left:.75rem;right:.75rem;bottom:.75rem;max-height:calc(100% - 1.5rem);overflow:auto;padding:1rem 1rem .875rem;border-radius:1.25rem;background:rgba(21,18,68,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fff;cursor:auto;opacity:0;transform:translateY(16px);transition:opacity .15s,transform .2s}
+.chooser.open{opacity:1;transform:none;transition:opacity .2s ease-out,transform .2s ease-out}
+.chooser p{margin:0 2.5rem .75rem 0;font-size:1rem;line-height:1.45}
+.chooser .why{color:#E4E2F6;margin:.75rem 0 0}
+.chooser .x{position:absolute;top:.25rem;right:.25rem;width:2.75rem;height:2.75rem;border-radius:50%;border:0;background:transparent;color:#fff;font:400 1.75rem/1 var(--body);cursor:pointer}
+.split.choosing .line,.split.choosing .handle{visibility:hidden}
+.row{display:flex;gap:.5rem;flex-wrap:wrap}
+.row .btn{flex:1 1 auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3rem;padding:.5rem 1.25rem;border-radius:999px;border:2px solid var(--btn);background:var(--btn);color:var(--btntext);font:700 1.0625rem/1.2 var(--display);cursor:pointer;text-decoration:none;text-align:center}
+.btn.gold{background:#E7C547;border-color:#E7C547;color:#151244}
+.btn.ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn.onglass{background:transparent;color:#fff;border-color:rgba(255,255,255,.75)}
+.btn svg{width:1.25rem;height:1.25rem;flex:none}
+.btn:active{transform:scale(.98)}
+.linkbtn{display:inline-flex;align-items:center;background:none;border:0;padding:0;min-height:2.75rem;color:var(--link);font:700 1rem/1.3 var(--body);text-decoration:underline;text-underline-offset:.18em;cursor:pointer;text-align:left}
+.cap{font-size:1rem;line-height:1.5;color:var(--sec);margin:.75rem 0 0;min-height:3em}
+.cap b{color:var(--text);font-family:var(--display)}
+.chips{display:flex;flex-wrap:wrap;gap:.375rem;margin:.75rem 0 0}
+.chip{display:inline-flex;align-items:center;gap:.375rem;min-height:2.75rem;padding:0 .875rem;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--text);font:700 1rem/1.2 var(--display);cursor:pointer}
+.chip[aria-checked=true],.chip[aria-pressed=true]{background:#E7C547;border-color:#E7C547;color:#151244}
+.chip .prem{font-size:1rem;line-height:1.4}
+.chip .dot{opacity:.8}
+.chip[aria-disabled=true]{opacity:.55;cursor:not-allowed}
+.bar{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem}
+.bar .btn{flex:1 1 auto}
+.bar [data-keep]{flex:0 1 auto}
+@media (min-width:36rem){.bar .btn{flex:0 1 auto}}
+.note{font-size:1rem;color:var(--sec);margin:.75rem 0 0}
+.note:empty{display:none}
+.note a,.note .linkbtn{font-weight:700}
+.month{margin:.75rem 0 0}
+.month label{display:block;font-weight:700;margin-bottom:.25rem}
+.month input{width:100%;min-height:2.75rem;accent-color:#E7C547}
+.month output{font-weight:700}
+.ph-note{margin:.75rem 0 0;padding:.75rem 1rem;border:2px dashed var(--sec);border-radius:1rem;font-size:1rem;color:var(--sec)}
+.ph-note b{color:var(--text)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"head" "demo" "sign" "free";padding-bottom:3rem}
+.hero>.head{grid-area:head}.hero>.demo{grid-area:demo}.hero>.signup{grid-area:sign}.hero>.free{grid-area:free}
+.desk{display:none}
+.lead.mob{font-size:1.0625rem;line-height:1.5;margin:-.25rem 0 1rem}
+@media (min-width:60rem){
+.hero{grid-template-columns:minmax(0,1fr) 30rem;grid-template-rows:auto auto 1fr;grid-template-areas:"head demo" "sign demo" "free demo";column-gap:4rem;padding:1rem 0 4.5rem;align-items:start}
+.hero .split{aspect-ratio:auto;height:min(600px,max(420px,calc(100vh - 23.5rem)))}
+.hero .cap{min-height:0}
+.phone{width:min(100%,17rem)}
+.desk{display:block}
+.mob{display:none}
+}
+.demo{margin:0}
+.signup{margin-top:2rem}
+.status{font:800 1.1875rem/1.35 var(--display);margin:0 0 .75rem}
+.signup label{display:block;font-weight:700;margin:0 0 .375rem}
+.field{display:flex;flex-direction:column;gap:.5rem}
+.field input{min-height:3rem;width:100%;padding:0 1rem;border-radius:.875rem;border:2px solid var(--sec);background:var(--card);color:var(--text);font:400 1.0625rem/1 var(--body)}
+.field input[aria-invalid=true]{border-color:var(--err)}
+.field .btn{width:100%}
+@media (min-width:36rem){.field{flex-direction:row}.field input{flex:1}.field .btn{width:auto;flex:none}}
+.err{color:var(--err);font-weight:700;font-size:1rem;margin:.5rem 0 0}
+.promise{font-size:1rem;color:var(--sec);margin:.75rem 0 0;max-width:38rem}
+.social{font-size:1rem;color:var(--sec);margin:.5rem 0 0}
+.social a{display:inline-flex;align-items:center;min-height:2.75rem}
+.done{padding:1rem 1.125rem;border-radius:1rem;background:var(--card);border:1px solid var(--line)}
+.done p{margin:0 0 .5rem}
+.free{}
+.freebox{margin-top:1.5rem;padding:1rem 1.125rem;border-radius:1.25rem;background:var(--soft)}
+.freebox p{margin:0}
+.freebox a{font-weight:700}
+.sect{padding-top:3rem;padding-bottom:3rem;border-top:1px solid var(--line)}
+@media (min-width:60rem){.sect{padding-top:4.5rem;padding-bottom:4.5rem}}
+.cols{display:grid;gap:2rem}
+@media (min-width:60rem){.cols{grid-template-columns:1fr 1fr;align-items:center;gap:4rem}}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.5rem}
+@media (min-width:60rem){.tiles{grid-template-columns:repeat(3,1fr);gap:1.5rem}}
+.tile{margin:0}
+.packs{display:grid;gap:1.5rem;margin-top:1.5rem}
+.feature{margin:0}
+.feature .cap{min-height:0}
+.packs .tiles{margin-top:0}
+.tiles.one{grid-template-columns:minmax(0,1fr)}
+.tiles.one .tile{display:grid;grid-template-columns:minmax(0,10rem) minmax(0,1fr);gap:1rem;align-items:start}
+.tiles.one .tile figcaption{margin-top:0}
+@media (min-width:60rem){.packs{grid-template-columns:minmax(0,30rem) minmax(0,1fr);column-gap:4rem;align-items:start}.tiles.one{grid-template-columns:minmax(0,1fr)}}
+.tile .pic{position:relative;aspect-ratio:4/5;border-radius:1.25rem;overflow:hidden;background:#2A2760}
+.tile .pic img{width:100%;height:100%;object-fit:cover}
+.tile .tag{position:absolute;left:.5rem;top:.5rem;display:inline-flex}
+.tile figcaption{font-size:1rem;color:var(--sec);margin-top:.5rem;line-height:1.5}
+.tile figcaption b{color:var(--text)}
+details{margin-top:1.5rem;border-radius:1rem;background:var(--card);border:1px solid var(--line)}
+summary{display:flex;align-items:center;min-height:3rem;padding:0 1.125rem;font:700 1.0625rem/1.3 var(--display);cursor:pointer}
+details ul{list-style:none;margin:0;padding:0 1.125rem 1rem}
+details li{padding:.5rem 0;border-top:1px solid var(--line)}
+.phone{position:relative;width:min(100%,14rem);aspect-ratio:9/19.5;border-radius:2.5rem;border:.5rem solid #151244;overflow:hidden;background:#2A2760;margin:0 auto;container-type:inline-size}
+@media (prefers-color-scheme:dark){.phone{border-color:#F7F4E6}}
+.phone img{width:100%;height:100%;object-fit:cover}
+.phone figcaption,.phone .ph{position:absolute;left:.5rem;right:.5rem;bottom:.5rem;padding:.5rem .625rem;border-radius:.875rem;border:2px dashed #E7C547;background:rgba(21,18,68,.9);color:#fff;font-size:1rem;line-height:1.35}
+.phone .ph b{color:#E7C547}
+.stripes{position:absolute;inset:0;background:repeating-linear-gradient(45deg,#1F1C5C 0 1rem,#151244 1rem 2rem)}
+.figcap{font-size:1rem;color:var(--sec);text-align:center;margin:.75rem 0 0}
+.eyes{display:flex;flex-wrap:wrap;gap:.375rem;list-style:none;padding:0;margin:1rem 0}
+.eyes li>*{display:inline-flex;align-items:center;min-height:2.75rem;padding:0 .875rem;border-radius:999px;border:1px solid var(--line);background:var(--card);font-weight:700;font-size:1rem;color:var(--text)}
+.eyes a{color:var(--link)}
+.quote{margin:0 0 1rem;padding:1rem 1.125rem;border-left:4px solid #E7C547;background:var(--card);border-radius:0 1rem 1rem 0;font:700 1.0625rem/1.5 var(--display)}
+.frame916{width:min(100%,18rem);aspect-ratio:9/16;margin:0 auto;border-radius:1.5rem;overflow:hidden;background:#2A2760;box-shadow:0 0 0 1px var(--line)}
+.frame916 img{width:100%;height:100%;object-fit:cover}
+@media (min-width:60rem){.frame916{width:20rem}}
+.plans{display:grid;gap:1rem;margin-top:1.5rem}
+@media (min-width:60rem){.plans{grid-template-columns:repeat(3,1fr)}}
+.plan{padding:1.25rem;border-radius:1.25rem;background:var(--card);border:1px solid var(--line)}
+.plan ul{list-style:none;padding:0;margin:.75rem 0 0}
+.plan li{padding:.625rem 0;border-top:1px solid var(--line)}
+.plan .p{display:block;font:800 1.25rem/1.3 var(--display)}
+.plan .u{display:block;color:var(--sec);font-size:1rem}
+.fineprint{margin-top:1.5rem;max-width:44rem}
+.fineprint p{font-size:1rem;color:var(--sec);margin:0 0 .75rem}
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:.625rem}
+.checks li{padding-left:1.875rem;position:relative}
+.checks li::before{content:"";position:absolute;left:.3rem;top:.5rem;width:.8rem;height:.45rem;border-left:3px solid var(--link);border-bottom:3px solid var(--link);transform:rotate(-45deg)}
+.closing{padding:1.5rem;border-radius:1.5rem;background:var(--card);border:1px solid var(--line)}
+.closing .signup{margin-top:0}
+.closing .freebox{background:var(--soft)}
+.story-intro{padding-top:3rem;border-top:1px solid var(--line)}
+.story{position:relative}
+.stage-wrap{display:none}
+.chapter{padding:1.5rem 0 2rem}
+.chapter .still{margin:0 0 1.25rem}
+.chapter .still .split{cursor:auto}
+.story.pinned .chapter .still{display:none}
+.story.pinned .stage-wrap{display:block;position:sticky;top:calc(var(--hh) + env(safe-area-inset-top) + 1px);z-index:2;margin:0 calc(-1 * var(--m))}
+.story.pinned .stage-wrap .split{aspect-ratio:auto;height:var(--stage-h);margin:0;border-radius:0}
+.story.pinned .chapter{display:flex;flex-direction:column;justify-content:flex-start;padding:1.5rem 0 1.75rem}
+.story{--stage-h:clamp(240px,42svh,380px)}
+@media (max-height:699px){.story{--stage-h:36svh}}
+.story-end{padding:1rem 0 3rem}
+@media (min-width:36rem) and (max-width:59.99rem){.story.pinned .stage-wrap{margin:0}.story.pinned .stage-wrap .split{border-radius:1.25rem}}
+@media (min-width:60rem){
+.story{display:grid;grid-template-columns:minmax(0,36rem) minmax(0,1fr);column-gap:4rem;align-items:start}
+.story .chapters{grid-column:1;grid-row:1}
+.story .stage-wrap{grid-column:2;grid-row:1}
+.story.pinned .stage-wrap{top:calc(var(--hh) + 1.5rem);margin:0}
+.story.pinned .stage-wrap .split{height:auto;max-height:640px;aspect-ratio:4/5;margin:0 0 0 auto;max-width:512px;border-radius:1.75rem}
+.story.pinned .chapter{min-height:min(50vh,28rem);justify-content:center;padding:2rem 0}
+}
+.crumbs{font-size:1rem;margin:.75rem 0 0;color:var(--sec)}
+.crumbs a{display:inline-flex;align-items:center;min-height:2.75rem}
+.caution{padding:.875rem 1rem;border-radius:1rem;border:2px solid var(--link);font-size:1rem;margin:1rem 0;max-width:40rem}
+.article{max-width:44rem}
+.q{padding:2rem 0 1rem}
+.q h2{margin-top:0}
+.sources{font-size:1rem;color:var(--sec);padding-left:1.5rem}
+.sources li{margin-bottom:.5rem}
+.byline{font-size:1rem;color:var(--sec)}
+.topic{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.topic .stage-col .split{aspect-ratio:auto;height:clamp(240px,42svh,380px)}
+.topic.pinned .stage-col{position:sticky;top:calc(var(--hh) + env(safe-area-inset-top) + 1px);z-index:2}
+.topic.pinned .stage-col .split{margin:0 calc(-1 * var(--m))}
+@media (max-height:699px){.topic .stage-col .split{height:36svh}}
+@media (min-width:36rem){.topic .stage-col .split{height:auto;aspect-ratio:4/3}.topic.pinned .stage-col .split{margin:0}}
+.topic .ctlbox{background:var(--bg);padding-bottom:.5rem}
+.topic .q .still{margin:0 0 1rem}
+.topic.pinned .q .still{display:none}
+@media (min-width:60rem){
+.topic{grid-template-columns:minmax(0,40rem) minmax(0,30rem);column-gap:4rem;align-items:start}
+.topic .stage-col{grid-column:2;grid-row:1 / span 2;position:sticky;top:calc(var(--hh) + 1.5rem)}
+.topic .stage-col .split,.topic.pinned .stage-col .split{height:auto;aspect-ratio:4/5;margin:0}
+.topic .flow{grid-column:1;grid-row:1 / span 2}
+.topic.pinned .q{padding:2.5rem 0 1.5rem}
+.topic.pinned[data-sweep] .q[data-fx]{min-height:min(40vh,22rem)}
+.topic .q .still{display:none}
+}
+.after{max-width:44rem}
+.zoo h3{margin:1.5rem 0 .5rem}
+.zoo ul{list-style:none;margin:0;padding:0 1.125rem;border-radius:1rem;background:var(--card);border:1px solid var(--line)}
+.zoo li{padding:.625rem 0;border-top:1px solid var(--line)}
+.zoo li:first-child{border-top:0}
+.zoo .say{display:block;color:var(--sec)}
+.zoo .more{margin-top:1.5rem}
+footer{border-top:1px solid var(--line);padding:2.5rem 0 calc(2.5rem + env(safe-area-inset-bottom));color:var(--sec);font-size:1rem;margin-top:3rem}
+footer .cols3{display:grid;gap:1rem}
+@media (min-width:60rem){footer .cols3{grid-template-columns:repeat(3,1fr)}footer .cols3.two{grid-template-columns:repeat(2,1fr)}}
+.prose1{max-width:46rem}
+footer h2{font-size:1.0625rem;margin:0 0 .25rem;color:var(--text)}
+footer ul{list-style:none;padding:0;margin:0}
+footer li a{display:inline-flex;align-items:center;min-height:2.75rem;min-width:2.75rem}
+footer p{margin:.75rem 0 0}
+.prose{max-width:44rem;padding-bottom:2rem}
+.prose h2{margin-top:2.5rem}
+.prose h3{margin-top:1.5rem}
+.prose ul{padding-left:1.25rem}
+.prose li{margin:.375rem 0}
+.jump{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 1rem}
+.phblock{padding:1rem 1.125rem;border:2px dashed var(--sec);border-radius:1rem;margin:1rem 0}
+.phblock b{color:var(--text)}
+.toc,.prose .toc{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.25rem 1rem}
+.toc a{display:inline-flex;align-items:center;min-height:2.75rem;min-width:2.75rem}
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.lyr.fade,.lab,.pill.solid,.chooser,.ring,.lyr img,.lyr canvas,.lyr video{transition:none!important}
+.lyr.fade.photo{transition:opacity .2s ease-out!important}
+}
+.prose h2.h1{font-size:2rem;line-height:1.15;margin:1.5rem 0 .5rem}
+.prose h3{font-size:1.25rem;margin-top:2rem}
+@media (min-width:60rem){.prose h2.h1{font-size:2.5rem}}
+.act{margin-top:2.5rem}
+.act h2{margin-top:.25rem}
+.steps{padding-left:1.5rem}
+.steps li{margin:.5rem 0}
+.sheet{margin-top:3rem}
+.ws{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.25rem 1.25rem 1.5rem;margin-top:1rem}
+.ws-title{font-weight:800;font-size:1.25rem;margin:0 0 .5rem}
+.ws-fields{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
+.ws ol{padding-left:1.5rem}
+.ws li{margin:.75rem 0}
+.ln{display:inline-block;min-width:8em;border-bottom:1.5px solid currentColor;height:1.1em;vertical-align:baseline}
+.ws-boxes{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:.75rem 0 0}
+.ws-boxes div{border:1.5px solid currentColor;border-radius:.5rem;min-height:9rem;padding:.5rem}
+.ws-boxes span{font-size:1rem}
+.ws-ans{margin-top:1.5rem;padding-top:1rem;border-top:1px dashed var(--line)}
+table.facts{width:100%;border-collapse:collapse;margin-top:1rem}
+.facts th,.facts td{text-align:left;vertical-align:top;padding:.625rem .5rem;border-top:1px solid var(--line)}
+.facts th{width:30%;font-weight:700}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+@media (min-width:40rem){.shots{grid-template-columns:repeat(3,1fr)}}
+.shot{margin:0}
+.shot img{display:block;width:100%;height:auto;aspect-ratio:1;border-radius:.75rem}
+.shot figcaption{font-size:1rem;margin-top:.375rem}
+.shot figcaption a{display:inline-flex;align-items:center;min-height:2.75rem;min-width:2.75rem}
+.prose .feature{margin:1rem 0 1.25rem;max-width:30rem}
+.prose .q{padding:1.5rem 0 .5rem}
+.prose .q h2{margin-top:0}
+.cmp thead th{font-weight:800;border-top:0}
+.cmp th[scope=row]{width:auto}
+.kit{list-style:none;padding:0}
+.kit a{display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;min-width:2.75rem;padding:0 .25rem}
+@media print{
+@page{size:A4;margin:14mm}
+.skip,.hdr,footer,.noprint{display:none!important}
+html,body{background:#fff!important;color:#000!important;font-size:11pt}
+.wrap,.prose{max-width:none;padding:0;margin:0}
+.sheet{margin:0}
+.ws{border:0;background:none;padding:0;margin:0;color:#000}
+.ws-title{font-size:15pt}
+.ws li{margin:0 0 5mm}
+.ln{min-width:45mm}
+.ws-fields .ln{min-width:32mm}
+.ws-boxes div{min-height:55mm}
+.ws-ans{break-before:page;border:0;margin:0;padding:0}
+}</style>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"How do fish see the world?","description":"Most fish see in colour, and some, like the goldfish, also see ultraviolet. But fish eyes vary more than any other animal’s: a shark has only one kind of colour cone. Under water, red light fades first, so the deeper a fish lives, the bluer its world.","inLanguage":"en","datePublished":"2026-11-28","dateModified":"2026-11-28","author":{"@type":"Person","name":"Xavi Heras"},"publisher":{"@type":"Person","name":"Xavi Heras"},"image":"https://xaviheras.github.io/zoolens/og/fish-en.jpg","mainEntityOfPage":"https://xaviheras.github.io/zoolens/how-fish-see/"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Zoolens","item":"https://xaviheras.github.io/zoolens/"},{"@type":"ListItem","position":2,"name":"How fish see","item":"https://xaviheras.github.io/zoolens/how-fish-see/"}]}]</script>
+<script type="application/json" id="zl">{"lang":"en","img":"../img/","assets":"../assets/","t":{"working":"Working, in this tab…","done":"Done. Nothing left this tab.","camOn":"Camera on. The picture stays in this tab; nothing is recorded or sent.","camBlocked":"The camera is blocked. You can still use a photo.","noCam":"This browser can’t use a camera here. You can still use a photo.","heic":"This browser can’t open HEIC photos. Try a JPEG or PNG.","badFile":"That file isn’t an image this browser can open. Try a JPEG or PNG.","camPaused":"Camera stopped to save battery.","camRestart":"Start it again","premiumNote":"Mantis shrimp is Premium, so here it’s a still. On your own picture you can try Dog, Cat and Bee.","stays":"Your picture stays in this browser tab. Nothing is recorded or sent.","dogStill":"Dogs notice movement: in the app, moving things stay sharp; in a still photo nothing moves, so the view is a little dimmer and softer.","blurNote":"Blur is exaggerated so it shows on a screen.","likeItNone":"Like it? The app does this live, with 35 more animals.","likeIt":"Like it? The app does this live, with 35 more animals. Tell me when it’s out","yourPhoto":"Your photo, split: your eyes on the left, the animal’s on the right.","yourCam":"Your camera, split: your eyes on the left, the animal’s on the right.","yourEyes":"Your eyes","markLine":"Zoolens · a simulation","shareText":"Seen through animal eyes with Zoolens","camWhy":"To show your camera as %s might see it, your browser will ask for the camera. The picture stays in this tab. Nothing is recorded or sent.","months":["Newborn","1 month","2 months","3 months","4 months","5 months","6 months","7 months","8 months","9 months","10 months","11 months","12 months"]},"eyes":{"goldfish":{"name":"Goldfish","who":"a goldfish","scene":"flowers","lab":"Goldfish \u003cspan class=\"prem\">Premium\u003c/span>","cap":"\u003cspan class=\"prem\">Premium\u003c/span> · \u003cb>Goldfish\u003c/b> · Extra-vivid colour and a wide, curved view; the ultraviolet part is estimated. A still here; live in the app.","aria":"Compare your eyes with a goldfish’s","vt":"%d% goldfish view","premium":true,"alt":"Right: the same photo with the Goldfish effect: extra-vivid colour."},"shark":{"name":"Shark","who":"a shark","scene":"dog","lab":"Shark \u003cspan class=\"prem\">Premium\u003c/span>","cap":"\u003cspan class=\"prem\">Premium\u003c/span> · \u003cb>Shark\u003c/b> · A blurry view in shades of one colour; where skin tones suggest something alive, a blue glow (an idea, not a sense). A still here; live in the app.","aria":"Compare your eyes with a shark’s","vt":"%d% shark view","premium":true,"alt":"Right: the same photo with the Shark effect: blurry and almost one colour, with a blue glow on the puppy."}},"scenes":{"dog":{"alt":"Left: the photo as people see it, a white puppy holding a red ball on clover."},"flowers":{"alt":"Left: meadow flowers as people see them, red poppies, blue cornflowers and daisies."},"chart":{"alt":"Left: a pie chart with red, green, blue and orange slices, as most people see it."},"face":{"alt":"Left: a face as people see it."}},"signup":"none","social":false}</script>
+<script src="../assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr"><div class="wrap">
+ <a class="brand" href="../" aria-label="Zoolens home"><svg class="logo-l" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#151244"/><circle cx="50" cy="50" r="36" fill="#F7F4E6"/><circle cx="50" cy="50" r="31" fill="#E7C547"/><path fill="#151244" d="M50 24 C57 36 57 64 50 76 C43 64 43 36 50 24 Z"/><circle cx="62" cy="35" r="4.5" fill="#FFFFFF"/></svg><svg class="logo-d" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#F7F4E6"/><circle cx="50" cy="50" r="46.5" fill="#151244"/><circle cx="50" cy="50" r="36" fill="#F7F4E6"/><circle cx="50" cy="50" r="31" fill="#E7C547"/><path fill="#151244" d="M50 24 C57 36 57 64 50 76 C43 64 43 36 50 24 Z"/><circle cx="62" cy="35" r="4.5" fill="#FFFFFF"/></svg><span class="word">Zoolens</span></a>
+ <nav aria-label="Language and launch list">
+  <a class="pill" href="../es/como-ven-los-peces/" hreflang="es" lang="es">Español</a>
+ </nav>
+</div></header>
+<main id="main"><div class="wrap prose">
+ <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Zoolens</a> › <span aria-current="page">How fish see</span></nav>
+ <h1>How do fish see the world?</h1>
+ <p class="answer">Most fish see in colour, and some, like the goldfish, also see ultraviolet. But fish eyes vary more than any other animal’s: a shark has only one kind of colour cone. Under water, red light fades first, so the deeper a fish lives, the bluer its world.</p>
+ <p class="caution">These pictures are simulations based on vision research, not exact images. The goldfish’s ultraviolet is estimated from ordinary colour, and the shark’s blue glow is a picture of an idea, not a sense: a phone camera can’t capture either.</p>
+ <section class="q" aria-labelledby="q0">
+  <h2 id="q0">Can fish see colour?</h2>
+  <p>Most do. Across fish, the colours they are sensitive to run from ultraviolet to red, and the number of visual pigments goes from 1 to more than 40. In a study of 213 species, the most common case was three kinds of colour cone, like most people. The goldfish has four, one of them for ultraviolet.</p>
+ </section>
+ <section class="q" aria-labelledby="q1">
+  <h2 id="q1">How do fish see underwater?</h2>
+  <p>Water filters light as it goes down. Red and orange are absorbed near the surface, and blue reaches deepest. That’s why a red fish in deep water looks black: there’s no red light left to bounce off it.</p>
+ </section>
+ <section class="q" aria-labelledby="q2">
+  <h2 id="q2">How does a goldfish see?</h2>
+  <figure class="feature" data-solo><div class="split" data-split data-scene="flowers" data-vt="%d% goldfish view" style="--x:50">
+ <div data-layers><div class="lyr animal"><picture><source media="(min-width: 960px)" type="image/avif" srcset="../img/flowers-goldfish-p45.avif"><source media="(min-width: 960px)" type="image/webp" srcset="../img/flowers-goldfish-p45.webp"><source media="(min-width: 960px)" srcset="../img/flowers-goldfish-p45.jpg"><source type="image/avif" srcset="../img/flowers-goldfish-sq.avif"><source type="image/webp" srcset="../img/flowers-goldfish-sq.webp"><img src="../img/flowers-goldfish-sq.jpg" width="800" height="800" alt="" loading="lazy" decoding="async"></picture></div><div class="lyr plain"><picture><source media="(min-width: 960px)" type="image/avif" srcset="../img/flowers-human-p45.avif"><source media="(min-width: 960px)" type="image/webp" srcset="../img/flowers-human-p45.webp"><source media="(min-width: 960px)" srcset="../img/flowers-human-p45.jpg"><source type="image/avif" srcset="../img/flowers-human-sq.avif"><source type="image/webp" srcset="../img/flowers-human-sq.webp"><img src="../img/flowers-human-sq.jpg" width="800" height="800" alt="Left: meadow flowers as people see them, red poppies, blue cornflowers and daisies. Right: the same photo with the Goldfish effect: extra-vivid colour." loading="lazy" decoding="async"></picture></div></div>
+ <span class="ctl lab lab-l">Your eyes</span><span class="ctl lab lab-r">Goldfish <span class="prem">Premium</span></span>
+ <div class="ctl line" aria-hidden="true"></div>
+ <div class="ctl handle" data-handle role="slider" tabindex="0" aria-label="Compare your eyes with a goldfish’s" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" aria-valuetext="60% goldfish view"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 16c3.2-5.2 7.4-7.8 12.5-7.8S25.3 10.8 28.5 16c-3.2 5.2-7.4 7.8-12.5 7.8S6.7 21.2 3.5 16z"/><circle cx="16" cy="16" r="4.2" fill="currentColor" stroke="none"/><path d="M1.5 9.5 0 16l1.5 6.5M30.5 9.5 32 16l-1.5 6.5" stroke-width="1.6"/></svg></div>
+</div><figcaption class="cap"><span class="prem">Premium</span> · <b>Goldfish</b> · Extra-vivid colour and a wide, curved view; the ultraviolet part is estimated. A still here; live in the app.</figcaption></figure>
+  <p>With four kinds of colour cones, one for ultraviolet, a goldfish sees a kind of light we can’t. Its round lens gives a wide, curved view. In Zoolens, the Goldfish view shows extra-vivid colour and a curved, wide picture; the ultraviolet part is estimated from ordinary colour.</p>
+ </section>
+ <section class="q" aria-labelledby="q3">
+  <h2 id="q3">Why are fish eyes round?</h2>
+  <p>Under water, the front of the eye barely bends light, because water and eye are almost the same. So the work is done by the lens, which in fish is nearly a perfect sphere.</p>
+ </section>
+ <section class="q" aria-labelledby="q4">
+  <h2 id="q4">How does a shark see?</h2>
+  <figure class="feature" data-solo><div class="split" data-split data-scene="dog" data-vt="%d% shark view" style="--x:50">
+ <div data-layers><div class="lyr animal"><picture><source media="(min-width: 960px)" type="image/avif" srcset="../img/dog-shark-p45.avif"><source media="(min-width: 960px)" type="image/webp" srcset="../img/dog-shark-p45.webp"><source media="(min-width: 960px)" srcset="../img/dog-shark-p45.jpg"><source type="image/avif" srcset="../img/dog-shark-sq.avif"><source type="image/webp" srcset="../img/dog-shark-sq.webp"><img src="../img/dog-shark-sq.jpg" width="800" height="800" alt="" loading="lazy" decoding="async"></picture></div><div class="lyr plain"><picture><source media="(min-width: 960px)" type="image/avif" srcset="../img/dog-human-p45.avif"><source media="(min-width: 960px)" type="image/webp" srcset="../img/dog-human-p45.webp"><source media="(min-width: 960px)" srcset="../img/dog-human-p45.jpg"><source type="image/avif" srcset="../img/dog-human-sq.avif"><source type="image/webp" srcset="../img/dog-human-sq.webp"><img src="../img/dog-human-sq.jpg" width="800" height="800" alt="Left: the photo as people see it, a white puppy holding a red ball on clover. Right: the same photo with the Shark effect: blurry and almost one colour, with a blue glow on the puppy." loading="lazy" decoding="async"></picture></div></div>
+ <span class="ctl lab lab-l">Your eyes</span><span class="ctl lab lab-r">Shark <span class="prem">Premium</span></span>
+ <div class="ctl line" aria-hidden="true"></div>
+ <div class="ctl handle" data-handle role="slider" tabindex="0" aria-label="Compare your eyes with a shark’s" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" aria-valuetext="60% shark view"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 16c3.2-5.2 7.4-7.8 12.5-7.8S25.3 10.8 28.5 16c-3.2 5.2-7.4 7.8-12.5 7.8S6.7 21.2 3.5 16z"/><circle cx="16" cy="16" r="4.2" fill="currentColor" stroke="none"/><path d="M1.5 9.5 0 16l1.5 6.5M30.5 9.5 32 16l-1.5 6.5" stroke-width="1.6"/></svg></div>
+</div><figcaption class="cap"><span class="prem">Premium</span> · <b>Shark</b> · A blurry view in shades of one colour; where skin tones suggest something alive, a blue glow (an idea, not a sense). A still here; live in the app.</figcaption></figure>
+  <p>Sharks have a single kind of colour cone, so they probably see the world in shades of one colour. In Zoolens, the Shark view is a blurry grey-green. Where skin tones suggest something alive, it adds a flickering blue glow: an idea of its electric sense, not a picture of it.</p>
+ </section>
+ <section class="q" aria-labelledby="tbl-h"><h2 id="tbl-h">Fish eyes at a glance</h2>
+  <table class="facts cmp"><thead><tr><th scope="col">Fish</th><th scope="col">Colour cones</th><th scope="col">What stands out</th></tr></thead><tbody><tr><th scope="row">Goldfish</th><td>4, one for ultraviolet</td><td>Vivid colour, wide curved view</td></tr><tr><th scope="row">Most fish studied</th><td>3 most often</td><td>Varies with where they live</td></tr><tr><th scope="row">Shark</th><td>1</td><td>Shades of one colour</td></tr><tr><th scope="row"><i>People, for comparison</i></th><td><i>3</i></td><td></td></tr></tbody></table></section>
+ <section class="q" aria-labelledby="try-h"><h2 id="try-h">Try it on your photo</h2><p>Dog, Cat and Bee are free to try on your own photo. Goldfish and Shark are in the app, in the Pets and Sea packs.</p>
+  <p><a class="btn" href="../#demo"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>Try it on your photo or camera</a></p><p>More: <a href="../how-birds-see/">How birds see</a> · <a href="../how-animals-see/">How animals see</a></p></section>
+ <section class="q"><h2>Sources</h2><ol class="sources"><li>Carleton KL, Escobar-Camacho D, Stieb SM, Cortesi F, Marshall NJ (2020). Seeing the rainbow: mechanisms underlying spectral sensitivity in teleost fishes. <i>Journal of Experimental Biology</i> 223(8):jeb193334. <a href="https://doi.org/10.1242/jeb.193334">doi.org/10.1242/jeb.193334</a></li><li>Schweikert LE, Fitak RR, Caves EM, Sutton TT, Johnsen S (2018). Spectral sensitivity in ray-finned fishes: diversity, ecology and shared descent. <i>Journal of Experimental Biology</i> 221(23):jeb189761. <a href="https://doi.org/10.1242/jeb.189761">doi.org/10.1242/jeb.189761</a></li><li>Neumeyer C (1992). Tetrachromatic color vision in goldfish: evidence from color mixture experiments. <i>Journal of Comparative Physiology A</i> 171(5). <a href="https://doi.org/10.1007/BF00194111">doi.org/10.1007/BF00194111</a></li><li>Jagger WS (1992). The optics of the spherical fish lens. <i>Vision Research</i> 32(7):1271-1284. <a href="https://doi.org/10.1016/0042-6989(92)90222-5">doi.org/10.1016/0042-6989(92)90222-5</a></li><li>Hart NS, Theiss SM, Harahush BK, Collin SP (2011). Microspectrophotometric evidence for cone monochromacy in sharks. <i>Naturwissenschaften</i> 98(3):193-201. <a href="https://doi.org/10.1007/s00114-010-0758-8">doi.org/10.1007/s00114-010-0758-8</a></li><li>NOAA Ocean Exploration, “Why are so many deep-sea animals red in color?”. <a href="https://oceanexplorer.noaa.gov/facts/red-color.html">oceanexplorer.noaa.gov/facts/red-color.html</a></li></ol>
+ <p class="byline">Updated 28 November 2026 · Made by Xavi Heras, the developer of Zoolens.</p></section>
+ <section class="sect" aria-labelledby="close-h"><div class="closing">
+  <h2 id="close-h">Want it on your iPhone?</h2>
+  <p class="status">Coming soon to the App Store</p>
+  <p>For iPhone, iOS 17 or later. There is no Android version. The demo on this page works on any phone or computer.</p>
+  <div class="signup" id="signup">
+ <p class="status">Sign-up for a launch email opens soon.</p>
+</div>
+  <div class="freebox"><p><strong>Dog, Cat, Bee and 12 human eyes are free.</strong> 35 more animals come in packs. Free photos and videos carry a mark, and one premium photo or 10-second video a day is free too. <a href="../#prices">What’s free and what’s paid</a></p></div>
+ </div></section>
+</div></main>
+<footer><div class="wrap">
+ <div class="cols3 two">
+  <div><h2>Learn</h2><ul><li><a href="../how-dogs-see/">How dogs see</a></li><li><a href="../how-cats-see/">How cats see</a></li><li><a href="../how-bees-see/">How bees see</a></li><li><a href="../color-blind-simulator/">Colour-blind simulator</a></li><li><a href="../how-babies-see/">How babies see</a></li><li><a href="../how-fish-see/">How fish see</a></li><li><a href="../how-birds-see/">How birds see</a></li><li><a href="../how-animals-see/">How animals see</a></li></ul></div>
+  <div><h2>Zoolens</h2><ul><li><a href="../for-teachers/">For teachers</a></li><li><a href="../press/">Press</a></li><li><a href="../support/">Support</a></li><li><a href="../privacy/">Privacy</a></li><li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">Terms (Apple’s standard licence)</a></li></ul></div>
+ </div>
+ <p>No cookies. No analytics. The demo never uploads your picture. Effects are simulations based on vision research, not measurements.</p>
+ <p>Made by Xavi Heras, the developer of Zoolens. Photos: Sushil Basnet and Fran Taylor on Unsplash.</p>
+</div></footer>
+</body>
+</html>
