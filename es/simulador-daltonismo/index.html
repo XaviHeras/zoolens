@@ -289,7 +289,7 @@ footer .cols3{display:grid;gap:1rem}
 .prose1{max-width:46rem}
 footer h2{font-size:1.0625rem;margin:0 0 .25rem;color:var(--text)}
 footer ul{list-style:none;padding:0;margin:0}
-footer li a{display:inline-flex;align-items:center;min-height:2.75rem}
+footer li a{display:inline-flex;align-items:center;min-height:2.75rem;min-width:2.75rem}
 footer p{margin:.75rem 0 0}
 .prose{max-width:44rem;padding-bottom:2rem}
 .prose h2{margin-top:2.5rem}
@@ -300,7 +300,7 @@ footer p{margin:.75rem 0 0}
 .phblock{padding:1rem 1.125rem;border:2px dashed var(--sec);border-radius:1rem;margin:1rem 0}
 .phblock b{color:var(--text)}
 .toc,.prose .toc{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.25rem 1rem}
-.toc a{display:inline-flex;align-items:center;min-height:2.75rem}
+.toc a{display:inline-flex;align-items:center;min-height:2.75rem;min-width:2.75rem}
 @media (prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
 .lyr.fade,.lab,.pill.solid,.chooser,.ring,.lyr img,.lyr canvas,.lyr video{transition:none!important}
@@ -308,7 +308,47 @@ html{scroll-behavior:auto}
 }
 .prose h2.h1{font-size:2rem;line-height:1.15;margin:1.5rem 0 .5rem}
 .prose h3{font-size:1.25rem;margin-top:2rem}
-@media (min-width:60rem){.prose h2.h1{font-size:2.5rem}}</style>
+@media (min-width:60rem){.prose h2.h1{font-size:2.5rem}}
+.act{margin-top:2.5rem}
+.act h2{margin-top:.25rem}
+.steps{padding-left:1.5rem}
+.steps li{margin:.5rem 0}
+.sheet{margin-top:3rem}
+.ws{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.25rem 1.25rem 1.5rem;margin-top:1rem}
+.ws-title{font-weight:800;font-size:1.25rem;margin:0 0 .5rem}
+.ws-fields{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
+.ws ol{padding-left:1.5rem}
+.ws li{margin:.75rem 0}
+.ln{display:inline-block;min-width:8em;border-bottom:1.5px solid currentColor;height:1.1em;vertical-align:baseline}
+.ws-boxes{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:.75rem 0 0}
+.ws-boxes div{border:1.5px solid currentColor;border-radius:.5rem;min-height:9rem;padding:.5rem}
+.ws-boxes span{font-size:1rem}
+.ws-ans{margin-top:1.5rem;padding-top:1rem;border-top:1px dashed var(--line)}
+table.facts{width:100%;border-collapse:collapse;margin-top:1rem}
+.facts th,.facts td{text-align:left;vertical-align:top;padding:.625rem .5rem;border-top:1px solid var(--line)}
+.facts th{width:30%;font-weight:700}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+@media (min-width:40rem){.shots{grid-template-columns:repeat(3,1fr)}}
+.shot{margin:0}
+.shot img{display:block;width:100%;height:auto;aspect-ratio:1;border-radius:.75rem}
+.shot figcaption{font-size:1rem;margin-top:.375rem}
+.shot figcaption a{display:inline-flex;align-items:center;min-height:2.75rem;min-width:2.75rem}
+.kit{list-style:none;padding:0}
+.kit a{display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;min-width:2.75rem;padding:0 .25rem}
+@media print{
+@page{size:A4;margin:14mm}
+.skip,.hdr,footer,.noprint{display:none!important}
+html,body{background:#fff!important;color:#000!important;font-size:11pt}
+.wrap,.prose{max-width:none;padding:0;margin:0}
+.sheet{margin:0}
+.ws{border:0;background:none;padding:0;margin:0;color:#000}
+.ws-title{font-size:15pt}
+.ws li{margin:0 0 5mm}
+.ln{min-width:45mm}
+.ws-fields .ln{min-width:32mm}
+.ws-boxes div{min-height:55mm}
+.ws-ans{break-before:page;border:0;margin:0;padding:0}
+}</style>
 <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Simulador de daltonismo con cámara o foto","description":"Mira una foto o tu cámara como podría verla alguien con daltonismo rojo-verde o azul-amarillo. Elige un tipo, arrastra la línea para comparar y usa tu propia imagen: se queda en esta pestaña del navegador.","inLanguage":"es","datePublished":"2026-11-14","dateModified":"2026-11-27","author":{"@type":"Person","name":"Xavi Heras"},"publisher":{"@type":"Person","name":"Xavi Heras"},"image":"https://xaviheras.github.io/zoolens/og/cb-es.jpg","mainEntityOfPage":"https://xaviheras.github.io/zoolens/es/simulador-daltonismo/"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Zoolens","item":"https://xaviheras.github.io/zoolens/es/"},{"@type":"ListItem","position":2,"name":"Simulador de daltonismo","item":"https://xaviheras.github.io/zoolens/es/simulador-daltonismo/"}]}]</script>
 <script type="application/json" id="zl">{"lang":"es","img":"../../img/","assets":"../../assets/","t":{"working":"Procesando, en esta pestaña…","done":"Hecho. Nada ha salido de esta pestaña.","camOn":"Cámara encendida. La imagen se queda en esta pestaña; no se graba ni se envía nada.","camBlocked":"La cámara está bloqueada. Puedes usar una foto.","noCam":"Este navegador no puede usar la cámara aquí. Puedes usar una foto.","heic":"Este navegador no puede abrir fotos HEIC. Prueba con un JPEG o un PNG.","badFile":"Ese archivo no es una imagen que este navegador pueda abrir. Prueba con un JPEG o un PNG.","camPaused":"Cámara parada para ahorrar batería.","camRestart":"Volver a encenderla","premiumNote":"El camarón mantis es Premium, así que aquí es una imagen fija. Con tu propia imagen puedes probar Perro, Gato y Abeja.","stays":"Tu imagen se queda en esta pestaña del navegador. No se graba ni se envía nada.","dogStill":"Los perros se fijan en el movimiento: en la app, lo que se mueve se ve nítido; en una foto fija nada se mueve, así que la vista sale algo más apagada y suave.","blurNote":"El desenfoque está exagerado para que se note en pantalla.","likeItNone":"¿Te gusta? La app lo hace en directo, con 35 animales más.","likeIt":"¿Te gusta? La app lo hace en directo, con 35 animales más. Avísame cuando salga","yourPhoto":"Tu foto, dividida: tus ojos a la izquierda, los del animal a la derecha.","yourCam":"Tu cámara, dividida: tus ojos a la izquierda, los del animal a la derecha.","yourEyes":"Tus ojos","markLine":"Zoolens · una simulación","shareText":"Visto con ojos de animal con Zoolens","camWhy":"Para ver tu cámara como podría verla %s, el navegador te pedirá la cámara. La imagen se queda en esta pestaña. No se graba ni se envía nada.","months":["Recién nacido","1 mes","2 meses","3 meses","4 meses","5 meses","6 meses","7 meses","8 meses","9 meses","10 meses","11 meses","12 meses"]},"eyes":{"protanopia":{"name":"Sin rojo","who":"alguien sin rojo","scene":"flowers","lab":"Sin rojo \u003cspan class=\"free\">Gratis\u003c/span>","cap":"\u003cb>Sin rojo\u003c/b> (protanopía) · Sin conos para el rojo: los rojos se oscurecen y se acercan al verde. Más o menos 1 de cada 100 hombres.","aria":"Compara tus ojos con unos ojos sin rojo","vt":"%d % vista sin rojo","vis":"Sin rojo","file":"zoolens-sin-rojo.jpg","premium":false,"alt":"A la derecha, la misma imagen como podría verla alguien sin rojo: los rojos se oscurecen y se acercan al verde."},"deuteranopia":{"name":"Sin verde","who":"alguien sin verde","scene":"flowers","lab":"Sin verde \u003cspan class=\"free\">Gratis\u003c/span>","cap":"\u003cb>Sin verde\u003c/b> (deuteranopía) · Sin conos para el verde: el rojo y el verde se parecen. Más o menos 1 de cada 100 hombres; las formas leves son mucho más comunes.","aria":"Compara tus ojos con unos ojos sin verde","vt":"%d % vista sin verde","vis":"Sin verde","file":"zoolens-sin-verde.jpg","premium":false,"alt":"A la derecha, la misma imagen como podría verla alguien sin verde: el rojo y el verde se parecen."},"tritanopia":{"name":"Sin azul","who":"alguien sin azul","scene":"flowers","lab":"Sin azul \u003cspan class=\"free\">Gratis\u003c/span>","cap":"\u003cb>Sin azul\u003c/b> (tritanopía) · Sin conos para el azul: los azules y los amarillos son los que más cambian. Es rara: las estimaciones van de 1 de cada 13.000 a 1 de cada 65.000.","aria":"Compara tus ojos con unos ojos sin azul","vt":"%d % vista sin azul","vis":"Sin azul","file":"zoolens-sin-azul.jpg","premium":false,"alt":"A la derecha, la misma imagen como podría verla alguien sin azul: los azules y los amarillos son los que más cambian."},"achromatopsia":{"name":"Sin color","who":"alguien que no ve colores","scene":"flowers","lab":"Sin color \u003cspan class=\"free\">Gratis\u003c/span>","cap":"\u003cb>Sin color\u003c/b> (acromatopsia) · Solo luz y oscuridad. Más o menos 1 de cada 30.000 personas. En la realidad también se ve menos detalle y molesta el deslumbramiento; aquí solo se muestra el color.","aria":"Compara tus ojos con unos ojos que no ven colores","vt":"%d % vista sin color","vis":"Sin color","file":"zoolens-sin-color.jpg","premium":false,"alt":"A la derecha, la misma imagen sin color: solo luz y oscuridad."}},"scenes":{"dog":{"alt":"A la izquierda, la foto como la vemos las personas: un cachorro blanco con una pelota roja sobre tréboles."},"flowers":{"alt":"A la izquierda, flores de prado como las vemos las personas: amapolas rojas, acianos azules y margaritas."},"chart":{"alt":"A la izquierda, un gráfico circular con porciones roja, verde, azul y naranja, como lo ve la mayoría."},"face":{"alt":"A la izquierda, una cara como la vemos las personas."}},"signup":"none","social":false}</script>
 <script src="../../assets/site.js" defer></script>
@@ -383,7 +423,7 @@ html{scroll-behavior:auto}
   <div class="txt">
    <div class="core"><p class="eyebrow">Pregunta 6</p>
    <h2 id="q5">¿Se entiende bien mi presentación?</h2>
-   <p>Haz una foto de tu diapositiva o gráfico, o apunta la cámara a la pantalla, y cambia entre Sin rojo y Sin verde. Si dos partes de un gráfico solo se distinguen por el rojo y el verde, pueden parecer iguales: añade etiquetas o tramas, o haz una más clara. El ejemplo del gráfico circular muestra cómo queda. Elige En paralelo para ver la imagen entera dos veces, una junto a otra: como la ve la mayoría y simulada.</p></div>
+   <p>Haz una foto de tu diapositiva o gráfico, o apunta la cámara a la pantalla, y cambia entre Sin rojo y Sin verde. Si dos partes de un gráfico solo se distinguen por el rojo y el verde, pueden parecer iguales: añade etiquetas o tramas, o haz una más clara. El ejemplo del gráfico circular muestra cómo queda. Elige En paralelo para ver la imagen entera dos veces, una junto a otra: como la ve la mayoría y simulada.</p><p>¿Eres docente? Tienes <a href="../../es/para-docentes/">3 actividades y una ficha para imprimir</a>.</p></div>
   </div>
  </section>
   </div>
@@ -407,7 +447,7 @@ html{scroll-behavior:auto}
 <footer><div class="wrap">
  <div class="cols3 two">
   <div><h2>Aprende</h2><ul><li><a href="../../es/como-ven-los-perros/">Cómo ven los perros</a></li><li><a href="../../es/como-ven-los-gatos/">Cómo ven los gatos</a></li><li><a href="../../es/como-ven-las-abejas/">Cómo ven las abejas</a></li><li><a href="../../es/simulador-daltonismo/">Simulador de daltonismo</a></li><li><a href="../../es/como-ve-un-bebe/">Cómo ve un bebé</a></li><li><a href="../../es/como-ven-los-animales/">Cómo ven los animales</a></li></ul></div>
-  <div><h2>Zoolens</h2><ul><li><a href="../../es/soporte/">Soporte</a></li><li><a href="../../privacy/#es">Privacidad</a></li><li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">Condiciones (licencia estándar de Apple)</a></li></ul></div>
+  <div><h2>Zoolens</h2><ul><li><a href="../../es/para-docentes/">Para docentes</a></li><li><a href="../../es/prensa/">Prensa</a></li><li><a href="../../es/soporte/">Soporte</a></li><li><a href="../../privacy/#es">Privacidad</a></li><li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">Condiciones (licencia estándar de Apple)</a></li></ul></div>
  </div>
  <p>Sin cookies. Sin analítica. La demo nunca sube tu imagen. Los efectos son simulaciones basadas en estudios de visión, no mediciones.</p>
  <p>Hecho por Xavi Heras, el desarrollador de Zoolens. Fotos: Sushil Basnet y Fran Taylor en Unsplash.</p>
